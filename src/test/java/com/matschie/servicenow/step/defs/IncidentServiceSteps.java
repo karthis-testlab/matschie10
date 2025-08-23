@@ -20,17 +20,17 @@ public class IncidentServiceSteps {
 
 	@Given("user should set the base path of the service now table api")
 	public void user_should_set_the_base_path_of_the_service_now_table_api() {
-		incidentService.setBasePath(config("service.now.base.path"));
+		incidentService.basePath(config("service.now.base.path"));
 	}
 
 	@Given("user should set the basic authentication of the servicenow api instance")
 	public void user_should_set_the_basic_authentication_of_the_servicenow_api_instance() {
-		incidentService.setBasicAuth(config("sevice.now.instance.username"), secret("service.now.instance.password"));
+		incidentService.basicAuth(config("sevice.now.instance.username"), secret("service.now.instance.password"));
 	}
 
 	@Given("user should set the header key as {string} and value as {string}")
 	public void user_should_set_the_header_key_as_and_value_as(String key, String value) {
-		incidentService.setHeader(key, value);
+		incidentService.header(key, value);
 	}
 
 	@When("user should hit the post request of the incident table api")
