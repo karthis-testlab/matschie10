@@ -24,7 +24,7 @@ public class RestAssuredListener implements Filter {
 				"============ Request Log ============",
 				"HTTP Method: "+requestSpec.getMethod(),
 				"URI: "+requestSpec.getURI(),
-				"Headers: "+requestSpec.getHeaders().asList().toString(),
+				"Request Headers: "+requestSpec.getHeaders().asList().toString(),
 				"Request Payload: "+isRequestPayLoadNull(requestSpec.getBody()),
 				"====================================="
 				));
@@ -35,8 +35,8 @@ public class RestAssuredListener implements Filter {
 			    "Response Status Line: "+response.getStatusLine(),
 				"Response Body: ",
 				response.getBody().asPrettyString(),				
-				"Headers: ",
-				"Content-Type: "+response.getHeader("Content-Type"),
+				"Response Headers: "+response.getHeaders().asList().toString(),
+				"Response Content-Type: "+response.getHeader("Content-Type"),
 				"====================================="
 				));
 		return response;

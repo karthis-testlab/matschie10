@@ -63,7 +63,7 @@ public class RestAssuredApiClientImpl implements ApiClient {
 	@Override
 	public ResponseAPI post(RequestSpecification request, String endPoint, Map<String, Object> body) {
 		
-		response = given(request).body(body).post(endPoint);
+		response = given(request).formParams(body).post(endPoint);
 
 		return new RestAssuredResponseImpl(response);
 	}
