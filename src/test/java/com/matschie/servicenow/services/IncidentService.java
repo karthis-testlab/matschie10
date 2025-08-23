@@ -52,6 +52,11 @@ public class IncidentService extends ServiceNowBase {
 		return this;
 	}
 	
+	public IncidentService createNewIncidentRecord() {		
+		response = apiClient.post(requestBuilder.build(), TABLE_NAME);
+		return this;
+	}
+	
 	public String extractSysId() {
 		return gson.fromJson(response.getBody(), TableApi.class)
 				   .getResult()

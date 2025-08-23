@@ -12,7 +12,22 @@
 		<jackson.databind.version>2.19.2</jackson.databind.version>
 		<apache.poi.version>5.4.1</apache.poi.version>
 		<apache.poi.ooxml.version>5.4.1</apache.poi.ooxml.version>
+		<allure.version>2.24.0</allure.version>
+		<cucumber.jvm.version>6.11.0</cucumber.jvm.version>
+		<cucumber.testng.version>6.11.0</cucumber.testng.version>
 	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.qameta.allure</groupId>
+				<artifactId>allure-bom</artifactId>
+				<version>${allure.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<dependency>
@@ -49,6 +64,26 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>${apache.poi.ooxml.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.jvm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>${cucumber.testng.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-cucumber6-jvm</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
   

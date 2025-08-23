@@ -8,6 +8,8 @@ import io.restassured.specification.RequestSpecification;
 public interface ApiClient {
 	
 	ResponseAPI get(RequestSpecification request, String endPoint);
+	
+	ResponseAPI post(RequestSpecification request, String endPoint);
 
 	ResponseAPI post(RequestSpecification request, String endPoint, String body);
 
